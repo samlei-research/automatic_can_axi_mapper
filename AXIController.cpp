@@ -20,8 +20,8 @@
 
 
 // Local includes
-#include "ZYNQServer/board.h"
-#include "Xilinx/xil_io.h"
+// #include "ZYNQServer/board.h"
+//#include "Xilinx/xil_io.h"
 
 
 #define MAP_WIDTH 4
@@ -91,9 +91,6 @@ u_int8_t AXIAdressCounter = 0;
 
 
 struct sched_param AXIsched, CAN1Rcvsched;
-
-    // dummy Test Data
-    VCUmessage nachricht;
 
 /*----------------------------------------------*/
 
@@ -277,10 +274,6 @@ void sendToAXI(){
 
        /* clean up */
     munmap(MEMptrWrite, MAP_WIDTH);
-
-    //send to GUI
-    nachricht.VCUId = tmpCAN_ID - 0x170;
-    nachricht.VCUData = tmpCANDataLow;
 } 
 
 /*
@@ -482,7 +475,7 @@ int main(int argc,char **argv) {
 */
 static void *tcp_handle_thread (void *ptr)
 {
-	int i;
+	/*int i;
 	int ret;
 	int tno;
 
@@ -584,11 +577,11 @@ static void *tcp_handle_thread (void *ptr)
 		ZYNQServer.writeBuffer(message2,GUISocket);*/
         
 
-    } while (1);
+    /*} while (1);
 
     fprintf(stderr, "TCP Thread exit\n", tno);
     close(GUISocket);
-    pthread_exit(NULL);
+    pthread_exit(NULL);*/
 }
 
 /***************************************************************************/
