@@ -1,0 +1,1 @@
+rmmod xilinx_canmodprobe can4linuxdevmem 0xF800012C 32 0x00E30444devmem 0xF800015C 32 0x00500A03devmem 0xF8000220 32 0x00000003devmem 0xF8000220 32 0x00000000
