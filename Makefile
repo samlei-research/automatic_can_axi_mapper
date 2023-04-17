@@ -1,10 +1,10 @@
-OBJS=AXIController.o 
+OBJS=can_axi_mapper.o 
 INC=~/workspace/os/can4linux/can4linux 
 
-all:	AXIController
+all:	can_axi_mapper
 
-AXIController:	$(OBJS)
-	arm-linux-gnueabihf-g++ $(LDFLAGS)  -pthread  -o AXIController $(OBJS)
+can_axi_mapper:	$(OBJS)
+	arm-linux-gnueabihf-g++ $(LDFLAGS)  -pthread  -o can_axi_mapper $(OBJS)
 
 $(OBJS): %.o:	%.cpp %.cpp
-	arm-linux-gnueabihf-g++ $(CFLAGS) -I ~/workspace/os/can4linux/can4linux -pthread -c -o $@ $<
+	arm-linux-gnueabihf-g++ $(CFLAGS) -I ~/can4linux/can4linux -pthread -c -o $@ $<
